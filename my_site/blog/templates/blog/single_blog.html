@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card-list</title>
+    <link rel="stylesheet" href="{% static './css/bootstrap.css'%}">
+</head>
+<body>
+  <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">Single blog</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="{% url "home" %}" class="nav-link active" aria-current="page">Go to Home</a></li>
+       
+      </ul>
+    </header>
+  </div>
+  <div styles="margin-top: 500px">
+  <div class="d-flex justify-content-around">
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% static './images/'|add:single_posts.image_name %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ single_posts.title }}</h5>
+          <p class="card-text">{{ single_posts.excerpt }}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="{% static './js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>
